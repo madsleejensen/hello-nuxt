@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>About {{ $store.state.counter }} {{ hello }}</h1>
+    <h1>About {{ $store.state.counter }} {{ hello }} {{ data }}</h1>
     <a @click="doIncrement">add</a>
   </div>
 </template>
@@ -10,8 +10,19 @@
 export default {
   name: 'about-page',
   asyncData(context) {
+    return new Promise((resolve) => {
+      console.log(123);
+
+      setTimeout(function() {
+        resolve({
+          data: "Mads",
+        })
+      }, 2000)
+    });
+  },
+  head() {
     return {
-      count: 123,
+      title: 'What is this about???'
     }
   },
   computed: {
