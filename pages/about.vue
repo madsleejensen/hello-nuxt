@@ -11,8 +11,6 @@ export default {
   name: 'about-page',
   asyncData(context) {
     return new Promise((resolve) => {
-      console.log(123);
-
       setTimeout(function() {
         resolve({
           data: "Mads",
@@ -27,7 +25,6 @@ export default {
   },
   computed: {
     hello() {
-      console.log(this.$store);
       return 33;
     }
   },
